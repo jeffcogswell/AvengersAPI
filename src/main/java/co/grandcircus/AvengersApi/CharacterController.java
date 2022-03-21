@@ -59,7 +59,7 @@ public class CharacterController {
 	// (C)RUD -- Create
 	@PostMapping("/character")
 	@ResponseStatus(HttpStatus.CREATED)
-	public AvCharacter create(AvCharacter avchar) {
+	public AvCharacter create(@RequestBody AvCharacter avchar) {
 		ch_repo.insert(avchar);
 		return avchar;
 	}
@@ -73,7 +73,7 @@ public class CharacterController {
 	
 	// CR(U)D -- Update
 	@PutMapping("/character")
-	public AvCharacter update(AvCharacter avchar) {
+	public AvCharacter update(@RequestBody AvCharacter avchar) {
 		return ch_repo.save(avchar);
 	}
 	
